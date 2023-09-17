@@ -1,0 +1,26 @@
+server:
+  port: 30030
+spring:
+  datasource:
+    driver-class-name: org.hsqldb.jdbcDriver
+    url: jdbc:hsqldb:hsql://localhost:9013/templateDB
+    username: SA
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: none # No crear tablas a partir de las entidadas
+      naming: # Matchear los nombres de las tablas con las columnas
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        format_sql: false
+        dialect: org.hibernate.dialect.HSQLDialect
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+      type:
+        descriptor:
+          sql: trace
+
